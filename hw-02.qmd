@@ -1,30 +1,122 @@
 ---
 title: "HW 02"
 author: "Nathan Herling"
+date: "2025-06-13"
+_due: "Friday-June-13-2025"   
 format: 
   html:
     embed-resources: true
 toc: true
+#custom field '_due', 
+#if you want to show in the document:**Due Date:** {{_due}}
 ---
 
-## 1 - A new day, a new plot, a new geom
+## 0 - Setup
 
+```{r setup, echo=FALSE}
+#Check if pacman [package manager] is installed, if not install it.
+#throw [FYI] alert either way.
+if (!requireNamespace("pacman", quietly = TRUE)) {
+  message("Installing 'pacman' (not found locally)...")
+  install.packages("pacman")
+} else {
+  message("[FYI]\n'pacman' already installed — skipping install.")
+}
+# use this line for installing/loading
+# pacman::p_load()
+# - packages to load stored in a variable (vector)
+pkgs <- c("tidyverse","glue","scales","lubridate","patchwork","ggh4x","ggrepel","openintro")
+# - load from the character array/vector
+pacman::p_load(char=pkgs)
+
+# - install tidyverse/dsbox directly from Git Hub
+# - this allows for the possible need to install on a repo. pull.
+# - and, if it's already installed just thorw an alert.
+if (!requireNamespace("dsbox", quietly = TRUE)) {
+  message("Installing 'dsbox' from GitHub (not found locally)...")
+  suppressMessages(devtools::install_github("tidyverse/dsbox"))
+} else {
+  message("[FYI]\n'dsbox' already installed — skipping GitHub install.")
+}
+
+# - alert to user packages loaded.
+cat(paste(
+  "The packages loaded:",
+  paste("-", pkgs, collapse = "\n"),
+  sep = "\n"
+))
+
+######################
+# Basic set Theme up #
+######################
+# ---- set theme for ggplot2
+ggplot2::theme_set(ggplot2::theme_minimal(base_size = 14))
+
+# set width of code output
+options(width = 65)
+
+# set figure parameters for knitr
+knitr::opts_chunk$set(
+  fig.width = 7,        # 7" width
+  fig.asp = 0.618,      # the golden ratio
+  fig.retina = 3,       # dpi multiplier for displaying HTML output on retina
+  fig.align = "center", # center align figures
+  dpi = 300             # higher dpi, sharper image
+)
+## ---- end theme set up
+```
+
+## 1 - A new day, a new plot, a new geom
+<div style="background-color:#f0f0f0; padding:10px; border-radius:5px; border:1px solid #87CEEB;">
+<b>Question #1</b><br>
+
+</div>
 ```{r}
 #| label: label-me-1
+#| echo: false
 
 ```
 
 ## 2 - Foreign Connected PACs
+<div style="background-color:#f0f0f0; padding:10px; border-radius:5px; border:1px solid #87CEEB;">
+<b>Question #2</b><br>
 
+</div>
 ```{r}
 #| label: label-me-2
+#| echo: false
 
 ```
 
 ## 3 - Median housing prices in the US
+<div style="background-color:#f0f0f0; padding:10px; border-radius:5px; border:1px solid #87CEEB;">
+<b>Question #3</b><br>
+
+</div>
+```{r}
+#| label: label-me-3
+#| echo: false
+
+```
 
 
 ## 4 - Expect More. Plot More.
+<div style="background-color:#f0f0f0; padding:10px; border-radius:5px; border:1px solid #87CEEB;">
+<b>Question #4</b><br>
 
+</div>
+```{r}
+#| label: label-me-4
+#| echo: false
 
+```
 ## 5 - Mirror, mirror on the wall, who’s the ugliest of them all?
+<div style="background-color:#f0f0f0; padding:10px; border-radius:5px; border:1px solid #87CEEB;">
+<b>Question #5</b><br>
+
+</div>
+```{r}
+#| label: label-me-4
+#| echo: false
+
+```
